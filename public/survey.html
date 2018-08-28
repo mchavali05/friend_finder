@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>survey</title>
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>Survey</h1>
+
+	<form id="survey-form">
+	  <h2>Do you like puppies?</h2>	
+	  <input type="radio" name="q1" value="1"> Do not agree
+
+	  <input type="radio" name="q1" value="1"> Mostly do not agree
+
+	  <input type="radio" name="q1" value="3"> Sometimes agree and sometimes disagree
+
+	  <input type="radio" name="q1" value="4"> Mostly agree
+
+	  <input type="radio" name="q1" value="5"> Completely agree
+
+	  <h2>Do you like kittens?</h2>	
+	  <input type="radio" name="q2" value="1"> Do not agree
+
+	  <input type="radio" name="q2" value="1"> Mostly do not agree
+
+	  <input type="radio" name="q2" value="3"> Sometimes agree and sometimes disagree
+
+	  <input type="radio" name="q2" value="4"> Mostly agree
+
+	  <input type="radio" name="q2" value="5"> Completely agree
+	  <br> <br>
+	  <button type="submit">Submit</button>
+	</form>
+
+	<script type="text/javascript">	
+		document.getElementById("survey-form").addEventListener("submit", function(event){
+			event.preventDefault();
+			var q1= $('input[name="q1"]:checked').val();
+			var q2= $('input[name="q2"]:checked').val();
+	    	console.log(q1);
+	    	console.log(q2);
+	    	var myValues = {data: [q1, q2]};
+	    	$.post('/friends', myValues, function(response){
+	    		console.log(response);
+	    	})
+		});
+
+		
+    </script>
+
+</body>
+</html>

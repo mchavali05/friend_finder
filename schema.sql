@@ -1,0 +1,22 @@
+DROP DATABASE IF EXISTS friends_db;
+
+CREATE DATABASE friends_db;
+
+USE friends_db;
+
+CREATE TABLE users(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255) NOT NULL,
+	score1 INT NOT NULL,
+	score2 INT NOT NULL,
+	score3 INT NOT NULL,
+	score4 INT NOT NULL,
+	score5 INT NOT NULL,
+	score6 INT NOT NULL,
+	score7 INT NOT NULL,
+	score8 INT NOT NULL,
+	score9 INT NOT NULL,
+	score10 INT NOT NULL,
+	photo VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
