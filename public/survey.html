@@ -182,7 +182,9 @@
 	    	$.post('/friends', myValues, function(response){
 	    		console.log(response);
 	    		$('#myModal').modal('show');
+	    		$('.modal-title').empty();
 	    		$('.modal-title').append(response.name);
+	    		$('.modal-body').empty();
 	    		$('.modal-body').append(`<img src=${response.photo}>`);
 
 	    	})

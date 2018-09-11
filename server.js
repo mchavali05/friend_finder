@@ -28,20 +28,22 @@ app.use(bodyParser.urlencoded({
 // 	  database: "friends_db"
 // });
 
+// //heroku db connection
+// var connection = mysql.createConnection({
+//     host: "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+
+//     // Your port; if not 3306
+//     port: 3306,
+
+//     // Your username
+//     user: "gtpevy3u1ra5zhbd",
+
+//     // Your password
+//     password: "vpmkrmwf49lnml6j",
+//     database: "eijpypsa1wccq6p7"
+// });
 //heroku db connection
-var connection = mysql.createConnection({
-    host: "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-
-    // Your port; if not 3306
-    port: 3306,
-
-    // Your username
-    user: "gtpevy3u1ra5zhbd",
-
-    // Your password
-    password: "vpmkrmwf49lnml6j",
-    database: "eijpypsa1wccq6p7"
-});
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 //friend route
 // app.get('/friends', function(req, res) {
 // 	connection.query('SELECT * FROM users;', function(error, results){
