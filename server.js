@@ -5,27 +5,43 @@ var mysql = require('mysql');
 var path = require('path');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
-
+//.env - for db connection
+//require("dotenv").config();
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+//localhost db connection
+// var connection = mysql.createConnection({
+// 	  host: "localhost",
+
+// 	  // Your port; if not 3306
+// 	  port: 3306,
+
+// 	  // Your username
+// 	  user: "root",
+
+// 	  // Your password
+// 	  password: "password",
+// 	  database: "friends_db"
+// });
+
+//heroku db connection
 var connection = mysql.createConnection({
-	  host: "localhost",
+    host: "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
 
-	  // Your port; if not 3306
-	  port: 3306,
+    // Your port; if not 3306
+    port: 3306,
 
-	  // Your username
-	  user: "root",
+    // Your username
+    user: "gtpevy3u1ra5zhbd",
 
-	  // Your password
-	  password: "password",
-	  database: "friends_db"
+    // Your password
+    password: "vpmkrmwf49lnml6j",
+    database: "eijpypsa1wccq6p7"
 });
-
 //friend route
 // app.get('/friends', function(req, res) {
 // 	connection.query('SELECT * FROM users;', function(error, results){
